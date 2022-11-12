@@ -2,7 +2,7 @@ package com.ellalearns.countrify.services
 
 data class Country(
     val altSpellings: List<String>,
-    val area: Int,
+    val area: Double,
     val borders: List<String>,
     val capital: List<String>,
     val capitalInfo: CapitalInfo,
@@ -23,7 +23,7 @@ data class Country(
     val independent: Boolean,
     val landlocked: Boolean,
     val languages: Languages,
-    val latlng: List<Int>,
+    val latlng: List<Double>,
     val maps: Maps,
     val name: Name,
     val population: Int,
