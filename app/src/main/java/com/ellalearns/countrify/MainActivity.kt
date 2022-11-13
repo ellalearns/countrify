@@ -1,8 +1,15 @@
 package com.ellalearns.countrify
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ellalearns.countrify.adapter.CountryListAdapter
@@ -33,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 recyclerAdapter.setCountryList(it)
                 recyclerAdapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(this, "Error in getting countries", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error in getting countries", Toast.LENGTH_LONG).show()
             }
         }
         viewModel.makeAPICall()
