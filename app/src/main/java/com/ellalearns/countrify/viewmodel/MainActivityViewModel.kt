@@ -5,13 +5,16 @@ import androidx.lifecycle.ViewModel
 import com.ellalearns.countrify.services.Country
 import com.ellalearns.countrify.services.CountryAPI
 import com.ellalearns.countrify.services.RetrofitInstance
+import okhttp3.internal.filterList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivityViewModel : ViewModel() {
 
+    var countryList = mutableListOf<Country>()
     lateinit var liveDataList: MutableLiveData<List<Country>>
+    lateinit var searchDataList: MutableLiveData<List<Country>>
 
     init {
         liveDataList = MutableLiveData()
@@ -19,6 +22,13 @@ class MainActivityViewModel : ViewModel() {
 
     fun getLiveData(): MutableLiveData<List<Country>> {
         return liveDataList
+    }
+
+    fun searchCountryList(query: String) {
+        val filteredCountries = countryList.filter {country: Country ->
+            (country.name.common).contains(query, ignoreCase = true,)
+        }
+        liveDataList.postValue(filteredCountries)
     }
 
     fun makeAPICall() {

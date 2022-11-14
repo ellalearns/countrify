@@ -1,5 +1,8 @@
 package com.ellalearns.countrify.services
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Translations(
     val ara: Ara,
     val bre: Bre,

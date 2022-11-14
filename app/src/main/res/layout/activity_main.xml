@@ -28,7 +28,8 @@
                 <SearchView
                     android:id="@+id/searchCountry"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:queryHint="Search Country" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -37,6 +38,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/langs"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0">
@@ -51,8 +53,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/ic_baseline_sports_basketball_24"
-                            android:contentDescription="languages" />
+                            android:contentDescription="languages"
+                            app:srcCompat="@drawable/ic_baseline_sports_basketball_24" />
 
                         <TextView
                             android:id="@+id/textView"

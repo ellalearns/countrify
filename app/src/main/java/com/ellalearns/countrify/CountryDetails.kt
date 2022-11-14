@@ -12,6 +12,7 @@ class CountryDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.country_details)
 
+
         val countryData = intent
 
         val flagImage = countryData.getStringExtra("flagImage")
@@ -101,5 +102,7 @@ class CountryDetails : AppCompatActivity() {
 
         val spaceView4 : TextView = findViewById(R.id.space4)
         spaceView4.text = " "
+
+        supportActionBar?.setTitle("Explore.")
     }
 }
